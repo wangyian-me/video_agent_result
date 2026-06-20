@@ -7,6 +7,7 @@ h1{font-size:1.8rem}.sub{color:var(--mut);margin-bottom:1.6rem}
 .about{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
 .about h2{margin:0 0 .5rem;font-size:1.15rem;color:#fff}
 .about p{color:var(--tx);margin:.2rem 0 1rem;max-width:74ch}
+.about .muted,.muted{color:var(--mut)}
 .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 @media(max-width:760px){.about-grid{grid-template-columns:1fr}}
 .about h3{font-size:.95rem;color:var(--ac);margin:0 0 .4rem}
@@ -95,12 +96,23 @@ table.lin{width:100%;border-collapse:collapse;font-size:.72rem;margin-top:.6rem}
     <div>
       <h3>Models</h3>
       <ul>
-        <li><b>Planning &amp; critique:</b> Claude (Opus)</li>
-        <li><b>Keyframes:</b> FLUX (text-to-image)</li>
-        <li><b>Video:</b> LTX-Video (fast) and Wan2.2-I2V-A14B with a 4-step
-        <b>Lightning</b> distillation — ~3× faster than the base A14B (~85s/clip) at
-        near-equal quality. The "Wan2.2" column is the Lightning render.</li>
-        <li><b>Voiceover:</b> Chatterbox TTS &nbsp;·&nbsp; <b>Music:</b> ACE-Step</li>
+        <li><b>Planning &amp; critique:</b> Claude (Opus). The keyframe critic scores each
+        shot's hero image on a 7-metric rubric <i>before</i> any video is generated — the
+        scorecard on each card.</li>
+        <li><b>Keyframes:</b> <b>Qwen-Image</b> (text-to-image). Chosen over FLUX
+        specifically to fix <b>product label / wordmark legibility</b> — FLUX garbled
+        on-pack text (e.g. "VOLLAGE" for VOLTAGE), Qwen renders it crisply, which is the
+        biggest jump in the product-fidelity scores. <span class="muted">(Original
+        sessions, shown alongside for comparison, used FLUX — see each card's model
+        badge.)</span></li>
+        <li><b>Video (two models, same plan):</b> <b>LTX-2.3</b> (22B distilled,
+        audio-video foundation model, native synchronized audio) and
+        <b>Wan2.2-I2V-A14B</b> with a 4-step <b>Lightning</b> distillation — ~3× faster
+        than the base A14B (~85s/clip) at near-equal quality. Both render ~3.0s clips
+        (LTX 73 frames @ 24fps, Wan 49 @ 16fps) so the two variants are the same length
+        and each shot outlasts its voiceover. The "Wan2.2" column is the Lightning
+        render; the "LTX" column is LTX-2.3.</li>
+        <li><b>Voiceover:</b> Chatterbox-turbo TTS &nbsp;·&nbsp; <b>Music:</b> ACE-Step</li>
       </ul>
     </div>
   </div>
