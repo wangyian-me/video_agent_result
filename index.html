@@ -3,7 +3,15 @@
 <title>Vignette — Runs Gallery</title><style>
 :root{--bg:#0d0d0f;--card:#16161c;--bd:#2a2a35;--tx:#e5e5ea;--mut:#8b8b9a;--ac:#a78bfa;}
 *{box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:-apple-system,Segoe UI,sans-serif;margin:0;padding:2rem;line-height:1.5}
-h1{font-size:1.8rem}.sub{color:var(--mut);margin-bottom:2rem}
+h1{font-size:1.8rem}.sub{color:var(--mut);margin-bottom:1.6rem}
+.about{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.6rem}
+.about h2{margin:0 0 .5rem;font-size:1.15rem;color:#fff}
+.about p{color:var(--tx);margin:.2rem 0 1rem;max-width:74ch}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+.about h3{font-size:.95rem;color:var(--ac);margin:0 0 .4rem}
+.about ol,.about ul{margin:0;padding-left:1.1rem;font-size:.82rem;color:var(--mut);line-height:1.5}
+.about li{margin-bottom:.35rem}.about b{color:var(--tx);font-weight:600}
 .run{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.4rem}
 .run-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem}
 h2{font-size:1.2rem;margin:0;color:#fff}.meta{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
@@ -40,6 +48,55 @@ table.lin{width:100%;border-collapse:collapse;font-size:.72rem;margin-top:.6rem}
 </style></head><body>
 <h1>Vignette — Runs Gallery</h1>
 <div class="sub">9 runs · 9 with finished video · ../video_agent_result</div>
+
+<section class="about">
+  <h2>How these ads were made</h2>
+  <p>Every ad here is generated end-to-end by <b>Vignette</b>, an agentic ad pipeline
+  running on an A100 GPU cluster. A single product image plus a short creative brief go
+  in; a finished vertical video ad — shots, voiceover, music, and cut — comes out. The
+  two videos per ad let you compare image-to-video models on the same plan.</p>
+  <div class="about-grid">
+    <div>
+      <h3>Pipeline</h3>
+      <ol>
+        <li><b>Blueprint</b> — a planner agent turns the product + brief into a structured
+        ad spec: ordered shots, each with a role (hook, demo, CTA…), camera, action,
+        voiceover, on-screen text, and mood — validated against a JSON schema.</li>
+        <li><b>Keyframes</b> — one hero image per shot (text-to-image), gated by a critic
+        agent <i>before</i> any expensive video work.</li>
+        <li><b>Video</b> — each keyframe is animated into a short clip (image-to-video).</li>
+        <li><b>Audio</b> — per-shot voiceover (TTS) plus a music bed.</li>
+        <li><b>Assemble</b> — clips concatenated in shot order, voiceover timed to each
+        shot, music ducked underneath, muxed to the final cut (ffmpeg).</li>
+        <li><b>Critic</b> — scores the result (the scorecard shown on each card).</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Design choices</h3>
+      <ul>
+        <li><b>Agents reason, skills orchestrate, a provider shim runs the models.</b>
+        Every model sits behind one uniform request → submit → poll contract, so models
+        are swappable from a registry without touching the pipeline.</li>
+        <li><b>Async on Slurm</b> — jobs are submitted then polled; run state is file-based
+        and resumable, so a preempted run picks up where it left off.</li>
+        <li><b>Full provenance</b> — every generation logs its neutral→refined prompt and
+        the file it produced, building a dataset for a future model-selection scorecard.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Models</h3>
+      <ul>
+        <li><b>Planning &amp; critique:</b> Claude (Opus)</li>
+        <li><b>Keyframes:</b> FLUX (text-to-image)</li>
+        <li><b>Video:</b> LTX-Video (fast) and Wan2.2-I2V-A14B with a 4-step
+        <b>Lightning</b> distillation — ~3× faster than the base A14B (~85s/clip) at
+        near-equal quality. The "Wan2.2" column is the Lightning render.</li>
+        <li><b>Voiceover:</b> Chatterbox TTS &nbsp;·&nbsp; <b>Music:</b> ACE-Step</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
     <section class="run">
       <div class="run-head">
