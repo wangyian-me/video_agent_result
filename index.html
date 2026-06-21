@@ -32,6 +32,7 @@ details{margin-top:1rem}summary{cursor:pointer;color:var(--ac);font-size:.85rem}
 .kfstrip{display:flex;gap:.5rem;overflow-x:auto;padding:.6rem 0 .2rem}
 figure.kf{margin:0;flex:0 0 auto;width:92px}
 figure.kf img{width:92px;height:auto;border-radius:6px;background:#000;display:block;border:1px solid var(--bd)}
+figure.kf video{width:140px;height:auto;border-radius:6px;background:#000;display:block;border:1px solid var(--bd)}
 figure.kf figcaption{font-size:.6rem;color:var(--mut);margin-top:.25rem;text-align:center;font-family:monospace}
 figure.kf figcaption span{color:var(--ac)}
 figure.kf.cons img{border-color:#1f6f53}
@@ -141,30 +142,24 @@ table.lin{width:100%;border-collapse:collapse;font-size:.72rem;margin-top:.6rem}
 
 <section class="run genre">
   <div class="run-head">
-    <h2>Glass-apple slice <span class="muted">— ASMR / satisfying</span></h2>
+    <h2>ASMR / satisfying <span class="muted">— native-audio genre</span></h2>
     <div class="meta"><span class="pill sess">genre R&amp;D</span>
-      <span class="pill mdl">◆ FLUX → LTX-2.3 (native audio)</span>
-      <span class="pill">satisfying</span><span class="pill">🔊 sound on</span>
-      <span class="rid">2026-06-21_glass_apple_asmr</span></div>
+      <span class="pill mdl">◆ Qwen-Image → LTX-2.3 (native audio)</span>
+      <span class="pill">satisfying</span><span class="pill">🔊 sound on</span></div>
   </div>
-  <p class="muted" style="font-size:.85rem;max-width:78ch;margin:.6rem 0 0">
-    The other 9 cards are ads (silent clips + a separately-generated voiceover/music bed).
-    The <b>satisfying</b> genre needs the <i>opposite</i>: the trigger sound (the slice) has
-    to land on the exact frame of the action — which a separate SFX layer can't do. This clip
-    uses <b>LTX-2.3</b>, an audio-video foundation model that generates the <b>foley jointly
-    with the video</b> from one prompt cue. <b>Play it with sound</b> — the glass "snick"
-    peaks right as the knife passes through (~0.4s).</p>
+  <p class="muted" style="font-size:.85rem;max-width:80ch;margin:.6rem 0 0">
+    The ad cards are silent clips + a separately-generated voiceover/music bed. The
+    <b>satisfying</b> genre needs the <i>opposite</i>: the trigger sound (slice, crumble,
+    squelch) has to land on the exact action frame — impossible with a bolt-on SFX layer.
+    These use <b>LTX-2.3</b>, an audio-video model that generates the <b>foley jointly with
+    the video</b>. <b>Play with sound.</b> The multi-shot pieces are concatenated through
+    <code>assemble.py</code>'s native audio-passthrough mode (each clip keeps its own synced
+    track; an EBU-R128 loudnorm pass lifts the quiet foley to a consistent level) — the same
+    pipeline that cuts the ads, routed to keep native audio for this genre.</p>
   <div class="grid">
-    <figure><figcaption>keyframe · FLUX</figcaption><img class="prod" src="media/2026-06-21_glass_apple_asmr/asmr_kf_c00.png" alt="asmr keyframe"></figure>
-    <figure><figcaption>LTX-2.3 · video + native synced audio</figcaption>
-      <video controls preload="metadata" src="media/2026-06-21_glass_apple_asmr/asmr_ltx2.mp4"></video></figure>
-    <figure><figcaption>why it matters</figcaption>
-      <div class="pending" style="aspect-ratio:9/16;flex-direction:column;gap:.5rem;padding:1rem;text-align:center;font-size:.78rem;line-height:1.5">
-        <span>1 keyframe → img2vid with audio cues</span>
-        <span class="muted">no separate TTS / music / SFX step</span>
-        <span class="muted">audio RMS peaks at the cut, then settles — the ASMR signature</span>
-      </div></figure>
+    <figure><figcaption>glass-apple slice · 3.0s · the trigger sound lands on the cut</figcaption><video controls preload="metadata" src="media/2026-06-21_glass_apple_asmr/asmr_ltx2.mp4"></video></figure><figure><figcaption>3-shot soap sequence · 15s · assembled native audio + loudnorm</figcaption><video controls preload="metadata" src="media/2026-06-21_soap_curls_asmr/final_ltx.mp4"></video></figure><figure><figcaption>diverse reel · 16.5s · soap + kinetic sand + slime</figcaption><video controls preload="metadata" src="media/2026-06-21_asmr_batch/asmr_reel.mp4"></video></figure>
   </div>
+  <details class="kfd" open><summary>standalone clips · longer single shots, hands in frame (muted previews — open the features above for sound)</summary><div class="kfstrip"><figure class="kf"><video muted loop preload="metadata" src="media/2026-06-21_asmr_batch/soap_clip.mp4"></video><figcaption>soap<br><span>single · 5–6.4s</span></figcaption></figure><figure class="kf"><video muted loop preload="metadata" src="media/2026-06-21_asmr_batch/sand_clip.mp4"></video><figcaption>sand<br><span>single · 5–6.4s</span></figcaption></figure><figure class="kf"><video muted loop preload="metadata" src="media/2026-06-21_asmr_batch/slime_clip.mp4"></video><figcaption>slime<br><span>single · 5–6.4s</span></figcaption></figure></div></details>
 </section>
 
     <section class="run">
