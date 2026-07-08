@@ -191,6 +191,37 @@ table.lin{width:100%;border-collapse:collapse;font-size:.72rem;margin-top:.6rem}
   </div>
 </section>
 
+<section class="run genre" style="border-color:#2f6f5a">
+  <div class="run-head">
+    <h2>The editor layer <span class="muted">— signal-driven auto-trim, before / after</span></h2>
+    <div class="meta"><span class="pill sess">editing R&amp;D</span>
+      <span class="pill mdl">◆ optical flow + sharpness + audio onsets → ffmpeg trim</span>
+      <span class="pill">CPU-only</span></div>
+  </div>
+  <p class="muted" style="font-size:.85rem;max-width:86ch;margin:.6rem 0 0">
+    Generated clips often waste their first half-second: the model composes the scene
+    before the action starts. A CPU-only signal pass (<code>scripts/clip_signals.py</code>:
+    per-frame <b>optical-flow motion energy</b>, a <b>sharpness curve</b>, and <b>audio
+    onsets</b> from LTX's native foley) measures every clip, and
+    <code>assemble.py --auto-trim</code> cuts each shot to its live window — native foley
+    windowed in lockstep, static shots exempt, and a shot never trimmed below its
+    voiceover. On this 60s long-form the pass found 4 dead lead-ins (3.2s of dead air)
+    across 15 shots and re-cut the piece to 56.6s; scene title cards and dissolves
+    survive untouched. Across all 9 current-stack runs the same sweep found 10 dead
+    lead-ins, exempted 13 static shots, and skipped the ambient-lifestyle run on purpose
+    (its slow holds are the mood — the trim decision is genre policy, not a constant).</p>
+  <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+    <figure><figcaption><b>before</b> · 59.8s · as generated, every clip full length</figcaption>
+      <video controls preload="metadata" src="media/2026-07-02_cinnamon_rolls_longform/final_ltx.mp4"></video></figure>
+    <figure><figcaption><b>after --auto-trim</b> · 56.6s · 4 dead lead-ins cut, foley intact</figcaption>
+      <video controls preload="metadata" src="media/2026-07-02_cinnamon_rolls_longform/final_ltx_autotrim.mp4"></video></figure>
+  </div>
+  <details class="scd" open><summary>the 4 trim decisions</summary>
+    <table class="lin"><tr><th>shot</th><th>cut from head</th><th>signal evidence</th></tr><tr><td class='mono'>shot_01</td><td class='sc good'>−0.62s</td><td>dead lead-in — only the steam moves before the push-in starts</td></tr><tr><td class='mono'>shot_06</td><td class='sc good'>−0.54s</td><td>dead lead-in before the brush motion begins</td></tr><tr><td class='mono'>shot_09</td><td class='sc good'>−1.01s</td><td>dead lead-in before the rolling action lands</td></tr><tr><td class='mono'>shot_13</td><td class='sc good'>−1.01s</td><td>dead lead-in before the drizzle arrives</td></tr></table>
+  </details>
+  <figure style="margin-top:1rem"><figcaption>the evidence for shot_01's cut — frames 0 / 7 / 15 / 24: nothing but steam moves until the push-in starts at ~frame 15 (0.62s), exactly where the motion-energy curve crosses the threshold</figcaption><img src="media/2026-07-02_cinnamon_rolls_longform/shot01_headstrip.png" alt="shot_01 head frames" style="width:100%;border-radius:10px;border:1px solid var(--bd)"></figure>
+</section>
+
 <section class="run genre floop-sec">
   <div class="run-head">
     <h2>The feedback loop <span class="muted">— critic gate + reject sampling</span></h2>
