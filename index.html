@@ -222,6 +222,31 @@ table.lin{width:100%;border-collapse:collapse;font-size:.72rem;margin-top:.6rem}
   <figure style="margin-top:1rem"><figcaption>the evidence for shot_01's cut — frames 0 / 7 / 15 / 24: nothing but steam moves until the push-in starts at ~frame 15 (0.62s), exactly where the motion-energy curve crosses the threshold</figcaption><img src="media/2026-07-02_cinnamon_rolls_longform/shot01_headstrip.png" alt="shot_01 head frames" style="width:100%;border-radius:10px;border:1px solid var(--bd)"></figure>
 </section>
 
+<section class="run genre" style="border-color:#6f5a2f">
+  <div class="run-head">
+    <h2>The sound layer <span class="muted">— announcer voice + broadcast mix, before / after</span></h2>
+    <div class="meta"><span class="pill sess">audio R&amp;D</span>
+      <span class="pill mdl">◆ Chatterbox voice-clone + ffmpeg sidechain/loudnorm</span>
+      <span class="pill">🔊 sound on</span></div>
+  </div>
+  <p class="muted" style="font-size:.85rem;max-width:86ch;margin:.6rem 0 0">
+    Same ad, same clips, same copy — only the <b>sound</b> changed. Before: Chatterbox's
+    single built-in voice over a music bed at fixed low volume, no processing at all.
+    After: the VO is <b>voice-cloned from a curated deep-announcer reference</b>
+    (public-domain LibriVox narration, pitch-deepened, cadence-tuned — the clone
+    inherits the reference's <i>pacing</i>, which we tempo-tune per shot length), then
+    run through a <b>broadcast chain</b> (warmth/presence EQ → compression → de-ess),
+    the bed is <b>sidechain-ducked</b> so it pumps down only while the announcer speaks
+    (−12 dB, measured), and the master is loudness-normalized to the −16 LUFS
+    streaming-ad standard (was −18.7). <b>Headphones recommended.</b></p>
+  <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+    <figure><figcaption><b>before</b> · built-in voice, flat mix</figcaption>
+      <video controls preload="metadata" src="media/2026-06-20_voltage_cold_brew_v2/final_ltx.mp4"></video></figure>
+    <figure><figcaption><b>after</b> · cloned announcer + ad-polish chain</figcaption>
+      <video controls preload="metadata" src="media/2026-06-20_voltage_cold_brew_v2/final_ltx_announcer.mp4"></video></figure>
+  </div>
+</section>
+
 <section class="run genre floop-sec">
   <div class="run-head">
     <h2>The feedback loop <span class="muted">— critic gate + reject sampling</span></h2>
