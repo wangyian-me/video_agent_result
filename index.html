@@ -247,6 +247,50 @@ table.lin{width:100%;border-collapse:collapse;font-size:.72rem;margin-top:.6rem}
   </div>
 </section>
 
+<section class="run genre" style="border-color:#5a2f6f">
+  <div class="run-head">
+    <h2>The template layer <span class="muted">— inverse blueprint: existing ad → reusable template → new product</span></h2>
+    <div class="meta"><span class="pill sess">video understanding R&amp;D</span>
+      <span class="pill mdl">◆ classical segmentation + flow/Lab measurement + Qwen3-VL-32B</span>
+      <span class="pill">provenance.mode=remix</span></div>
+  </div>
+  <p class="muted" style="font-size:.85rem;max-width:86ch;margin:.6rem 0 0">
+    Run the generation pipeline <b>backwards</b>: given a finished video, extract a
+    <b>Template</b> — a normal, schema-valid blueprint whose STRUCTURE fields (roles,
+    durations, camera moves, palette, pacing) are verbatim <i>measurements</i> of the
+    source and whose CONTENT fields (subjects, actions, copy) are <code>{{slot}}</code>
+    placeholders — then fill the slots with a different product and hand the result to the
+    unchanged generation pipeline. Demonstrated below on our own Voltage ad (any finished
+    ad works; our generated finals double as a free labeled benchmark for every stage).</p>
+  <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><div style='flex:1 1 160px;min-width:150px;border:1px solid var(--bd);border-radius:10px;padding:.55rem .7rem'><div class='mono' style='font-weight:600'>1 · segment</div><div class='muted' style='font-size:.78rem;margin-top:.2rem'>classical frame-diff + dissolve test, audio proposes / video confirms</div><div style='font-size:.75rem;margin-top:.3rem;color:#2f6f5a'>▸ recall 1.0 on all 4 test videos, cuts ±0.03s</div></div><div style='flex:1 1 160px;min-width:150px;border:1px solid var(--bd);border-radius:10px;padding:.55rem .7rem'><div class='mono' style='font-weight:600'>2 · measure</div><div class='muted' style='font-size:.78rem;margin-top:.2rem'>camera fit (flow least-squares), palette (Lab), pacing fingerprint</div><div style='font-size:.75rem;margin-top:.3rem;color:#2f6f5a'>▸ extractor 4/4 on ground-truth motions</div></div><div style='flex:1 1 160px;min-width:150px;border:1px solid var(--bd);border-radius:10px;padding:.55rem .7rem'><div class='mono' style='font-weight:600'>3 · describe</div><div class='muted' style='font-size:.78rem;margin-top:.2rem'>Qwen3-VL per cut shot: role / subject / framing / text (JSON-constrained)</div><div style='font-size:.75rem;margin-top:.3rem;color:#2f6f5a'>▸ role acc 40%, self-consistency 0.93–1.0 — a prior, not truth</div></div><div style='flex:1 1 160px;min-width:150px;border:1px solid var(--bd);border-radius:10px;padding:.55rem .7rem'><div class='mono' style='font-weight:600'>4 · template</div><div class='muted' style='font-size:.78rem;margin-top:.2rem'>STRUCTURE verbatim from measurements, CONTENT → {{slot}}s</div><div style='font-size:.75rem;margin-top:.3rem;color:#2f6f5a'>▸ a schema-valid blueprint; provenance.mode=remix</div></div><div style='flex:1 1 160px;min-width:150px;border:1px solid var(--bd);border-radius:10px;padding:.55rem .7rem'><div class='mono' style='font-weight:600'>5 · fill</div><div class='muted' style='font-size:.78rem;margin-top:.2rem'>deterministic slot substitution for the NEW product</div><div style='font-size:.75rem;margin-top:.3rem;color:#2f6f5a'>▸ validated blueprint → normal generation pipeline</div></div></div>
+  <div class="grid" style="grid-template-columns:1.05fr 1.6fr;margin-top:1rem">
+    <figure><figcaption><b>source</b> · the finished Voltage ad the template was extracted from</figcaption>
+      <video controls preload="metadata" src="media/2026-06-20_voltage_cold_brew_v2/final_ltx.mp4"></video></figure>
+    <div>
+      <details class="scd" open><summary>what the extractor measured, per shot</summary>
+        <table class="lin"><tr><th>shot</th><th>len</th><th>measured camera</th><th>palette</th>
+          <th>VLM role</th><th>VLM subject (source content → becomes a slot)</th></tr>
+          <tr><td class='mono'>shot_01</td><td>3.0s</td><td class='mono'>static</td><td><span style='display:inline-block;width:.9em;height:.9em;border-radius:3px;background:#7a868a;vertical-align:-.1em;border:1px solid var(--bd)'></span></td><td class='mono'>problem</td><td>tired man resting head on desk</td></tr><tr><td class='mono'>shot_02</td><td>3.0s</td><td class='mono'>slow handheld</td><td><span style='display:inline-block;width:.9em;height:.9em;border-radius:3px;background:#6387ac;vertical-align:-.1em;border:1px solid var(--bd)'></span></td><td class='mono'>demo</td><td>hand opening energy drink can</td></tr><tr><td class='mono'>shot_03</td><td>3.0s</td><td class='mono'>slow push in</td><td><span style='display:inline-block;width:.9em;height:.9em;border-radius:3px;background:#987f6b;vertical-align:-.1em;border:1px solid var(--bd)'></span></td><td class='mono'>demo</td><td>man holding open can of Voltage</td></tr><tr><td class='mono'>shot_04</td><td>3.0s</td><td class='mono'>medium handheld</td><td><span style='display:inline-block;width:.9em;height:.9em;border-radius:3px;background:#5a84c9;vertical-align:-.1em;border:1px solid var(--bd)'></span></td><td class='mono'>demo</td><td>condensed energy drink can</td></tr><tr><td class='mono'>shot_05</td><td>3.0s</td><td class='mono'>medium tilt</td><td><span style='display:inline-block;width:.9em;height:.9em;border-radius:3px;background:#5089b6;vertical-align:-.1em;border:1px solid var(--bd)'></span></td><td class='mono'>reveal</td><td>black can with blue &#x27;VOLTAGE&#x27; text</td></tr></table>
+        <p class="muted" style="font-size:.78rem;margin:.4rem 0 0">
+          pacing fingerprint: median shot 3.042s, log-spread 0.006
+          (metronomic — an honest tell of our own assembly), cut-on-onset
+          0.75. Role labels are a calibrated <i>prior</i>
+          (40% exact-match vs blueprint intent at 0.93–1.0 self-consistency — the VLM is
+          confidently, systematically biased; hook/cta read as reveal).</p>
+      </details>
+      <details class="scd" open><summary>slot-fill: same structure, new product (Nimbus sparkling water)</summary>
+        <table class="lin"><tr><th>template slot</th><th>fill</th></tr><tr><td class='mono'>{{slot:product.name}}</td><td>Nimbus Sparkling Water</td></tr><tr><td class='mono'>{{slot:cta_text}}</td><td>Taste the alps. Shop Nimbus.</td></tr><tr><td class='mono'>{{slot:shot_02.subject}}</td><td>a frosted sky-blue Nimbus can rising through swirling mist</td></tr><tr><td class='mono'>{{slot:shot_03.action}}</td><td>the tab cracks open and a fine sparkling mist bursts upward</td></tr></table>
+        <p class="muted" style="font-size:.78rem;margin:.4rem 0 0">
+          → <code>blueprint_nimbus_remix.json</code>, schema- and genre-<b>VALID</b>: e.g.
+          shot_02 keeps the measured <code>slow handheld</code>
+          camera and 3.0s slot, now reading
+          “a frosted sky-blue Nimbus can rising through swirling mist, closeup framing”. Generating this remix
+          end-to-end is the next milestone.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="run genre floop-sec">
   <div class="run-head">
     <h2>The feedback loop <span class="muted">— critic gate + reject sampling</span></h2>
