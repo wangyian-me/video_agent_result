@@ -1,0 +1,209 @@
+{
+ "video": "refs/yili_milk_BV1bTULBCE8y.mp4",
+ "fps": 30.0,
+ "duration_s": 110.466,
+ "level": "beat",
+ "boundaries": [],
+ "shots": [
+  {
+   "shot_idx": 0,
+   "in_s": 0.0,
+   "out_s": 9.933,
+   "entered_by": "start",
+   "beat_id": "b01",
+   "act": "act_1",
+   "job": "office problem: overtime lands at quitting time",
+   "kind": "problem"
+  },
+  {
+   "shot_idx": 1,
+   "in_s": 9.933,
+   "out_s": 13.133,
+   "entered_by": "beat",
+   "beat_id": "b02",
+   "act": "act_1",
+   "job": "curse-word pun: 草 becomes grass",
+   "kind": "word"
+  },
+  {
+   "shot_idx": 2,
+   "in_s": 13.133,
+   "out_s": 18.967,
+   "entered_by": "beat",
+   "beat_id": "b03",
+   "act": "act_1",
+   "job": "pasture world: 48N golden milk belt grass",
+   "kind": "world"
+  },
+  {
+   "shot_idx": 3,
+   "in_s": 18.967,
+   "out_s": 21.6,
+   "entered_by": "beat",
+   "beat_id": "b04",
+   "act": "act_1",
+   "job": "tag line: good grass, good Yili",
+   "kind": "tag"
+  },
+  {
+   "shot_idx": 4,
+   "in_s": 21.6,
+   "out_s": 24.133,
+   "entered_by": "beat",
+   "beat_id": "b05",
+   "act": "act_1",
+   "job": "coda gag: man wants to eat grass too",
+   "kind": "coda"
+  },
+  {
+   "shot_idx": 5,
+   "in_s": 24.133,
+   "out_s": 29.466,
+   "entered_by": "beat",
+   "beat_id": "b06",
+   "act": "act_2",
+   "job": "office problem: boss message sent to whole group",
+   "kind": "problem"
+  },
+  {
+   "shot_idx": 6,
+   "in_s": 29.466,
+   "out_s": 32.733,
+   "entered_by": "beat",
+   "beat_id": "b07",
+   "act": "act_2",
+   "job": "shock-exclamation pun: reaction becomes COW",
+   "kind": "word"
+  },
+  {
+   "shot_idx": 7,
+   "in_s": 32.733,
+   "out_s": 40.533,
+   "entered_by": "beat",
+   "beat_id": "b08",
+   "act": "act_2",
+   "job": "cow world: purebred Holstein herd grazing",
+   "kind": "world"
+  },
+  {
+   "shot_idx": 8,
+   "in_s": 40.533,
+   "out_s": 43.133,
+   "entered_by": "beat",
+   "beat_id": "b09",
+   "act": "act_2",
+   "job": "tag line: good cow, good Yili",
+   "kind": "tag"
+  },
+  {
+   "shot_idx": 9,
+   "in_s": 43.133,
+   "out_s": 52.966,
+   "entered_by": "beat",
+   "beat_id": "b10",
+   "act": "act_2",
+   "job": "coda gag: man in cow suit grazes",
+   "kind": "coda"
+  },
+  {
+   "shot_idx": 10,
+   "in_s": 52.966,
+   "out_s": 63.366,
+   "entered_by": "beat",
+   "beat_id": "b11",
+   "act": "act_3",
+   "job": "office problem: excited work declared wasted",
+   "kind": "problem"
+  },
+  {
+   "shot_idx": 11,
+   "in_s": 63.366,
+   "out_s": 66.4,
+   "entered_by": "beat",
+   "beat_id": "b12",
+   "act": "act_3",
+   "job": "wasted-work pun: 白 becomes white milk",
+   "kind": "word"
+  },
+  {
+   "shot_idx": 12,
+   "in_s": 66.4,
+   "out_s": 70.1,
+   "entered_by": "beat",
+   "beat_id": "b13",
+   "act": "act_3",
+   "job": "milk world: hand-milking, natural pure milk",
+   "kind": "world"
+  },
+  {
+   "shot_idx": 13,
+   "in_s": 70.1,
+   "out_s": 72.533,
+   "entered_by": "beat",
+   "beat_id": "b14",
+   "act": "act_3",
+   "job": "tag line: good milk, good Yili",
+   "kind": "tag"
+  },
+  {
+   "shot_idx": 14,
+   "in_s": 72.533,
+   "out_s": 75.9,
+   "entered_by": "beat",
+   "beat_id": "b15",
+   "act": "act_3",
+   "job": "coda: man drinks milk in the field",
+   "kind": "coda"
+  },
+  {
+   "shot_idx": 15,
+   "in_s": 75.9,
+   "out_s": 84.683,
+   "entered_by": "beat",
+   "beat_id": "b16",
+   "act": "act_4",
+   "job": "endorsement: stacked slogan then Yili logo",
+   "kind": "endorsement"
+  },
+  {
+   "shot_idx": 16,
+   "in_s": 84.683,
+   "out_s": 92.666,
+   "entered_by": "beat",
+   "beat_id": "b17",
+   "act": "act_5",
+   "job": "gag: man chases carton mascot with giant straw",
+   "kind": "gag"
+  },
+  {
+   "shot_idx": 17,
+   "in_s": 92.666,
+   "out_s": 100.966,
+   "entered_by": "beat",
+   "beat_id": "b18",
+   "act": "act_5",
+   "job": "meta problem: how is this ad any different",
+   "kind": "problem"
+  },
+  {
+   "shot_idx": 18,
+   "in_s": 100.966,
+   "out_s": 107.899,
+   "entered_by": "beat",
+   "beat_id": "b19",
+   "act": "act_5",
+   "job": "reveal + pack: versatile Yili nutrition",
+   "kind": "tag"
+  },
+  {
+   "shot_idx": 19,
+   "in_s": 107.899,
+   "out_s": 110.466,
+   "entered_by": "beat",
+   "beat_id": "b20",
+   "act": "act_6",
+   "job": "channel end card: follow for good ads",
+   "kind": "end_card"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "acts": [
+  {"id": "act_1", "label": "Pun cycle 1: overtime -> 草 (grass) -> pasture world", "beats": ["b01", "b02", "b03", "b04", "b05"]},
+  {"id": "act_2", "label": "Pun cycle 2: message to wrong group -> COW -> Holstein herd world", "beats": ["b06", "b07", "b08", "b09", "b10"]},
+  {"id": "act_3", "label": "Pun cycle 3: work wasted 白干了 -> 白 (white) -> fresh milk world", "beats": ["b11", "b12", "b13", "b14", "b15"]},
+  {"id": "act_4", "label": "Brand summary: three puns stacked into one slogan + logo", "beats": ["b16"]},
+  {"id": "act_5", "label": "Meta epilogue: man vs milk-carton mascot, 'what's new' reveal + pack", "beats": ["b17", "b18", "b19"]},
+  {"id": "act_6", "label": "Channel end card", "beats": ["b20"]}
+ ],
+ "beats": [
+  {"id": "b01", "shots": [0, 3], "act": "act_1", "job": "office problem: overtime lands at quitting time", "kind": "problem", "on_screen_text": "小加个班吧"},
+  {"id": "b02", "shots": [4, 5], "act": "act_1", "job": "curse-word pun: 草 becomes grass", "kind": "word", "on_screen_text": "草"},
+  {"id": "b03", "shots": [6, 7], "act": "act_1", "job": "pasture world: 48N golden milk belt grass", "kind": "world", "on_screen_text": "北纬48度黄金奶源带 / 孕育多汁牧草"},
+  {"id": "b04", "shots": [8, 8], "act": "act_1", "job": "tag line: good grass, good Yili", "kind": "tag", "on_screen_text": "好草 好伊利"},
+  {"id": "b05", "shots": [9, 9], "act": "act_1", "job": "coda gag: man wants to eat grass too", "kind": "coda", "on_screen_text": "我也想吃"},
+  {"id": "b06", "shots": [10, 11], "act": "act_2", "job": "office problem: boss message sent to whole group", "kind": "problem", "on_screen_text": "你给领导写发大群了"},
+  {"id": "b07", "shots": [12, 14], "act": "act_2", "job": "shock-exclamation pun: reaction becomes COW", "kind": "word", "on_screen_text": "COW"},
+  {"id": "b08", "shots": [15, 18], "act": "act_2", "job": "cow world: purebred Holstein herd grazing", "kind": "world", "on_screen_text": "伊利优质奶牛 / 优选纯正血统荷斯坦牛 / 种源品质世界领先"},
+  {"id": "b09", "shots": [19, 19], "act": "act_2", "job": "tag line: good cow, good Yili", "kind": "tag", "on_screen_text": "好牛 好伊利"},
+  {"id": "b10", "shots": [20, 21], "act": "act_2", "job": "coda gag: man in cow suit grazes", "kind": "coda", "on_screen_text": "我是好牛"},
+  {"id": "b11", "shots": [22, 24], "act": "act_3", "job": "office problem: excited work declared wasted", "kind": "problem", "on_screen_text": "兴奋瞬间翻倍了 / 先别忙了 / 白干了"},
+  {"id": "b12", "shots": [25, 25], "act": "act_3", "job": "wasted-work pun: 白 becomes white milk", "kind": "word", "on_screen_text": "白 伊利优质乳蛋白"},
+  {"id": "b13", "shots": [26, 28], "act": "act_3", "job": "milk world: hand-milking, natural pure milk", "kind": "world", "on_screen_text": "源自天然 更显纯粹"},
+  {"id": "b14", "shots": [29, 29], "act": "act_3", "job": "tag line: good milk, good Yili", "kind": "tag", "on_screen_text": "好奶 好伊利"},
+  {"id": "b15", "shots": [30, 30], "act": "act_3", "job": "coda: man drinks milk in the field", "kind": "coda", "on_screen_text": null},
+  {"id": "b16", "shots": [31, 33], "act": "act_4", "job": "endorsement: stacked slogan then Yili logo", "kind": "endorsement", "on_screen_text": "好草好牛好伊利 天然营养好牛奶"},
+  {"id": "b17", "shots": [34, 35], "act": "act_5", "job": "gag: man chases carton mascot with giant straw", "kind": "gag", "on_screen_text": "我就是要喝你"},
+  {"id": "b18", "shots": [36, 37], "act": "act_5", "job": "meta problem: how is this ad any different", "kind": "problem", "on_screen_text": "和那些我这样拍广告 有什么区别 / 那你有什么新点子"},
+  {"id": "b19", "shots": [38, 39], "act": "act_5", "job": "reveal + pack: versatile Yili nutrition", "kind": "tag", "on_screen_text": "只有百搭的伊利好营养"},
+  {"id": "b20", "shots": [40, 40], "act": "act_6", "job": "channel end card: follow for good ads", "kind": "end_card", "on_screen_text": "好看广告 一键关注，最好看的广告都在这里！"}
+ ],
+ "shape_note": "Three identical cycles of office-problem -> exclaimed word turns into a pun (草/COW/白) -> Yili sourcing world -> '好X 好伊利' tag -> man-in-the-world coda, with office stakes escalating from overtime to public embarrassment to wasted work, then a stacked-slogan endorsement and a self-aware mascot epilogue that pays off with the pack."
+}
