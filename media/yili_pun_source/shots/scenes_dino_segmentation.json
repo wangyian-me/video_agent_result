@@ -1,0 +1,151 @@
+{
+ "video": "refs/yili_milk_BV1bTULBCE8y.mp4",
+ "fps": 30.0,
+ "duration_s": 110.466,
+ "level": "scene",
+ "model": "dino",
+ "th": 0.35,
+ "boundaries": [],
+ "shots": [
+  {
+   "shot_idx": 0,
+   "in_s": 0.0,
+   "out_s": 1.367,
+   "entered_by": "scene",
+   "scenario": "S0"
+  },
+  {
+   "shot_idx": 1,
+   "in_s": 1.367,
+   "out_s": 9.933,
+   "entered_by": "scene",
+   "scenario": "S1"
+  },
+  {
+   "shot_idx": 2,
+   "in_s": 9.933,
+   "out_s": 11.3,
+   "entered_by": "scene",
+   "scenario": "S2"
+  },
+  {
+   "shot_idx": 3,
+   "in_s": 11.3,
+   "out_s": 13.133,
+   "entered_by": "scene",
+   "scenario": "S3"
+  },
+  {
+   "shot_idx": 4,
+   "in_s": 13.133,
+   "out_s": 21.6,
+   "entered_by": "scene",
+   "scenario": "S4"
+  },
+  {
+   "shot_idx": 5,
+   "in_s": 21.6,
+   "out_s": 24.133,
+   "entered_by": "scene",
+   "scenario": "S3"
+  },
+  {
+   "shot_idx": 6,
+   "in_s": 24.133,
+   "out_s": 27.067,
+   "entered_by": "scene",
+   "scenario": "S5"
+  },
+  {
+   "shot_idx": 7,
+   "in_s": 27.067,
+   "out_s": 31.3,
+   "entered_by": "scene",
+   "scenario": "S1"
+  },
+  {
+   "shot_idx": 8,
+   "in_s": 31.3,
+   "out_s": 43.133,
+   "entered_by": "scene",
+   "scenario": "S6"
+  },
+  {
+   "shot_idx": 9,
+   "in_s": 43.133,
+   "out_s": 52.966,
+   "entered_by": "scene",
+   "scenario": "S7"
+  },
+  {
+   "shot_idx": 10,
+   "in_s": 52.966,
+   "out_s": 63.366,
+   "entered_by": "scene",
+   "scenario": "S1"
+  },
+  {
+   "shot_idx": 11,
+   "in_s": 63.366,
+   "out_s": 66.4,
+   "entered_by": "scene",
+   "scenario": "S8"
+  },
+  {
+   "shot_idx": 12,
+   "in_s": 66.4,
+   "out_s": 67.9,
+   "entered_by": "scene",
+   "scenario": "S6"
+  },
+  {
+   "shot_idx": 13,
+   "in_s": 67.9,
+   "out_s": 72.533,
+   "entered_by": "scene",
+   "scenario": "S9"
+  },
+  {
+   "shot_idx": 14,
+   "in_s": 72.533,
+   "out_s": 82.666,
+   "entered_by": "scene",
+   "scenario": "S3"
+  },
+  {
+   "shot_idx": 15,
+   "in_s": 82.666,
+   "out_s": 84.683,
+   "entered_by": "scene",
+   "scenario": "S10"
+  },
+  {
+   "shot_idx": 16,
+   "in_s": 84.683,
+   "out_s": 92.666,
+   "entered_by": "scene",
+   "scenario": "S11"
+  },
+  {
+   "shot_idx": 17,
+   "in_s": 92.666,
+   "out_s": 96.366,
+   "entered_by": "scene",
+   "scenario": "S1"
+  },
+  {
+   "shot_idx": 18,
+   "in_s": 96.366,
+   "out_s": 107.899,
+   "entered_by": "scene",
+   "scenario": "S12"
+  },
+  {
+   "shot_idx": 19,
+   "in_s": 107.899,
+   "out_s": 110.466,
+   "entered_by": "scene",
+   "scenario": "S10"
+  }
+ ]
+}
